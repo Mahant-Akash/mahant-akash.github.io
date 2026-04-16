@@ -1,0 +1,533 @@
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Akash Mahant | Finance & Accounting Professional</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucside.min.js"></script>
+      <style>
+          :root {
+              --color-bg: #0a0item;
+              --color-bg: #0a0e14;
+              --color-surface: #161b22;
+              --color-text-primary: #e6edf3;
+              --color-text-secondary: #8b949e;
+              --color-accent: #d4af37; /* Champagne Gold */
+              --color-accent-dim: rgba(212, 175, 55, 0.1);
+              --color-border: rgba(230, 237, 248, 0.1);
+              --font-serif: 'Playfair Display', serif;
+              --font-sans: 'Inter', sans-serif;
+              --transition-smooth: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+          }
+
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+
+          html {
+              scroll-template: smooth;
+              scroll-behavior: smooth;
+          }
+
+          body {
+              background-color: var(--color-bg);
+              color: var(--color-text-primary);
+              font-family: var(--font-sans);
+              line-height: 1.6;
+              overflow-x: hidden;
+          }
+
+          /* Grain Overlay */
+          body::before {
+              content: "";
+              position: fixed;
+              top: 0; left: 0; width: 100%; height: 100%;
+              background: url('https://grainy-gradients.vercel.app/noise.svg');
+              opacity: 0.05;
+              pointer-events: none;
+              z-index: 9999;
+          }
+
+          h1, h2, h3 {
+              font-family: var(--font-serif);
+              font-weight: 700;
+              line-height: 1.2;
+          }
+
+          p {
+              color: var(--color-text-secondary);
+              font-weight: 300;
+          }
+
+          .container {
+              max-width: 1100px;
+              margin: 0 auto;
+              padding: 0 2rem;
+          }
+
+          section {
+              padding: 8rem 0;
+              opacity: 0;
+              transform: translateY(30px);
+              transition: var(--transition-smooth);
+          }
+
+          section.visible {
+              opacity: 1;
+              transform: translateY(0);
+          }
+
+          /* Hero */
+          .hero {
+              height: 100vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              position: relative;
+              overflow: hidden;
+          }
+
+          .hero-glow {
+              position: absolute;
+              width: 50vw;
+              height: 50vw;
+              background: radial-gradient(circle, var(--color-accent-dim) 0%, transparent 70%);
+              top: -10%;
+              right: -10%;
+              z: -1;
+          }
+
+          .hero h1 {
+              font-size: clamp(3rem, 8vw, 5.5rem);
+              margin-bottom: 1rem;
+          }
+
+          .hero .subtitle {
+              text-transform: uppercase;
+              letter-spacing: 0.3em;
+              font-size: 0.9rem;
+              color: var(--color-accent);
+              font-weight: 600;
+              display: block;
+              margin-bottom: 2rem;
+          }
+
+          .hero p {
+              font-size: 1.2rem;
+              font-style: italic;
+              max-width: 600px;
+              margin: 0 auto;
+          }
+
+          /* Section Headers */
+          .section-header {
+              margin-um: 4rem;
+              margin-bottom: 4rem;
+          }
+
+          .section-header h2 {
+              font-size: 2.5rem;
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+          }
+
+          .section-header h2::after {
+              content: "";
+              height: 1px;
+              flex-grow: 1;
+              background: var(--color-border);
+          }
+
+          /* Experience */
+          .timeline {
+              position: relative;
+              border-left: 1px solid var(--color-border);
+              padding-left: 2rem;
+          }
+
+          .timeline-item {
+              position: relative;
+              margin-bottom: 4rem;
+          }
+
+          .timeline-item::before {
+              content: "";
+              position: absolute;
+              left: calc(-2rem - 5px);
+              top: 0.5rem;
+              width: 10px;
+              height: 10px;
+              background: var(--color-accent);
+              border-radius: 50%;
+              box-shadow: 0 0 10px var(--color-accent);
+          }
+
+          .timeline-role {
+              font-family: var(--font-serif);
+              font-size: 1.5rem;
+              color: var(--color-text-primary);
+          }
+
+          .timeline-company {
+              color: var(--color-accent);
+              font-weight: 600;
+              font-size: 0.9rem;
+              text-transform: uppercase;
+              display: block;
+              margin-bottom: 1rem;
+          }
+
+          .timeline-desc {
+              list-style: none;
+          }
+
+          .timeline-desc li {
+              margin-bottom: 0.75rem;
+              position: relative;
+              padding-left: 1.5rem;
+          }
+
+          .timeline-desc li::before {
+              content: "•";
+              position: absolute;
+              left: 0;
+              color: var(--color-accent);
+          }
+
+          /* Skills */
+          .skills-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 2rem;
+          }
+
+          .skill-card {
+              background: var(--color-surface);
+              padding: 2.5rem;
+              border: 1px solid var(--color-border);
+              border-radius: 4px;
+              transition: var(--transition-smooth);
+          }
+
+          .skill-card:hover {
+              border-color: var(--color-accent);
+              transform: translateY(-5px);
+          }
+
+          .skill-card h3 {
+              color: var(--color-accent);
+              margin-bottom: 1.5rem;
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+          }
+
+          .skill-list {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.75rem;
+          }
+
+          .skill-tag {
+              background: rgba(255, 255, 255, 0.05);
+              padding: 0.4rem 0.8rem;
+              border-radius: 2px;
+              font-size: 0.85rem;
+              border: 1px solid var(--color-border);
+              color: var(--color-text-primary);
+          }
+
+          /* Projects */
+          .project-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+              gap: 2rem;
+          }
+
+          .project-card {
+              background: var(--color-surface);
+              border: 1px solid var(--color-border);
+              padding: 2rem;
+              text-decoration: none;
+              color: inherit;
+              display: flex;
+              flex-direction: column;
+              transition: var(--transition-smooth);
+          }
+
+          .project-card:hover {
+              border-color: var(--color-accent);
+              background: rgba(212, 175, 55, 0.02);
+          }
+
+          .project-card h3 {
+              margin-bottom: 1rem;
+          }
+
+          .project-card p {
+              margin-bottom: 1.5rem;
+              flex-grow: 1;
+          }
+
+          .project-link {
+              color: var(--color-accent);
+              font-size: 0.85rem;
+              font-weight: 600;
+              text-transform: uppercase;
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+          }
+
+          /* Achievements */
+          .achievement-item {
+              padding: 1.5rem 0;
+              border-bottom: 1px solid var(--color-border);
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+          }
+
+          .achievement-text {
+              font-weight: 500;
+          }
+
+          .achievement-date {
+              color: var(--color-accent);
+              font-size: 0.9rem;
+          }
+
+          /* Contact */
+          .contact-container {
+              text-align: center;
+              padding: 4rem 0;
+          }
+
+          .contact-links {
+              display: flex;
+              justify-content: center;
+              gap: 3rem;
+              margin-top: 2rem;
+          }
+
+          .contact-item {
+              color: var(--color-text-primary);
+              text-decoration: none;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 0.5rem;
+              transition: var(--transition-smooth);
+          }
+
+          .contact-item:hover {
+              color: var(--color-accent);
+              transform: translateY(-5px);
+          }
+
+          footer {
+              padding: 4rem 0;
+              text-align: center;
+              font-size: 0.8rem;
+              color: var(--color-text-secondary);
+              border-top: 1px solid var(--color-border);
+          }
+
+          @media (max-width: 768px) {
+              .hero h1 { font-size: 3rem; }
+              section { padding: 4rem 0; }
+              .contact-links { flex-direction: column; gap: 2rem; }
+          }
+      </style>
+  </head>
+  <body>
+
+      <div class="hero">
+          <div class="hero-glow"></div>
+          <div class="container">
+              <span class="subtitle">Finance & Accounting Professional</span>
+              <h1>Akash Mahant</h1>
+              <p>Detail-oriented professional with expertise in accounts payable, grant billing, and financial reporting. CFA Level I Candidate.</p>
+          </div>
+      </div>
+
+      <div class="container">
+          <section id="about">
+              <div class="section-header">
+                  <h2>Profile</h2>
+              </div>
+              <p style="font-size: 1.25rem; color: var(--color-text-primary); line-height: 1.8;">
+                  Detail-oriented finance & accounting professional with an MS in Finance and hands-on experience in accounts payable, grant billing, and financial reporting. Seeking to
+  leverage expertise in a collaborative environment.
+              </p>
+          </section>
+
+          <section id="experience">
+              <div class="section-header">
+                  <h2>Professional Experience</h2>
+              </div>
+              <div class="timeline">
+                  <div class="timeline-item">
+                      <span class="timeline-company">January 2025 – Present</span>
+                      <h3 class="timeline-role">Staff Accountant</h3>
+                      <span class="timeline-company">Volunteers of America-Greater New York</span>
+                      <ul class="timeline-desc">
+                          <li>Manage grant billing operations, preparing and submitting claims totaling $45K-$100K quarterly.</li>
+                          <li>Implemented Microsoft Power Automate workflow to automate invoice routing.</li>
+                          <li>Perform daily reconciliation in Microsoft Business Central with 99%+ accuracy.</li>
+                      </ul>
+                  </div>
+
+                  <div class="timeline-item">
+                      <span class="timeline-company">August 2019 – July 2022</span>
+                      <h3 class="timeline-role">Senior Process Associate</h3>
+                      <span class="timeline-company">Accenture</span>
+                      <ul class="timeline-desc">
+                          <li>Drove operational excellence by automating processes with custom Excel macros.</li>
+                          <li>Achieved 124% productivity rate while maintaining 100% accuracy.</li>
+                          <li>Led training for 7+ new team members.</li>
+                      </ul>
+                  </div>
+
+                  <div class="timeline-item">
+                      <span class="timeline-company">July 2018 – November 2018</span>
+                      <h3 class="timeline-role">Financial Advisor</h3>
+                      <span class="timeline-company">Money Honey Financial Services</span>
+                      <ul class="timeline-desc">
+                          <li>Achieved 100% client retention rate across a portfolio of 200+ clients.</li>
+                          <li>Delivered 8% ROI on a $750K diversified portfolio.</li>
+                      </ul>
+                  </div>
+              </div>
+          </section>
+
+          <section id="skills">
+              <div class="section-header">
+                  <h2>Expertise</h2>
+              </div>
+              <div class="skills-grid">
+                  <div class="skill-card">
+                      <h3><i data-lucide="cpu"></i> Technical</h3>
+                      <div class="skill-list">
+                          <span class="skill-tag">Accounts Payable</span>
+                          <span class="skill-tag">Financial Reporting</span>
+                          <span class="skill-tag">Grant Billing</span>
+                          <span class="skill-tag">Microsoft Business Central</span>
+                          <span class="skill-tag">Oracle Cloud</span>
+                          <span class="skill-tag">Advanced Excel</span>
+                          <span class="skill-tag">Python (RAG)</span>
+                      </div>
+                  </div>
+                  <div class="skill-card">
+                      <h3><i data-lucide="shield-check"></i> Professional</h3>
+                      <div class="skill-list">
+                          <span class="skill-tag">GAAP Knowledge</span>
+                          <span class="skill-tag">Regulatory Compliance</span>
+                          <span class="skill-tag">Audit Support</span>
+                          <span class="skill-tag">Vendor Management</span>
+                          <span class="skill-tag">Process Automation</span>
+                          <span class="skill-tag">Risk Assessment</span>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <section id="projects">
+              <div class="section-header">
+                  <h2>Selected Projects</h2>
+              </div>
+              <div class="project-grid">
+                  <a href="https://github.com/Mahant-Akash/SEC-Filing-RAG-Local-AI-for-Financial-Research" class="project-card" target="_blank">
+                      <h3>AI-Powered SEC Research</h3>
+                      <p>Developed a Python RAG pipeline to automate regulatory filing analysis, enabling natural language queries.</p>
+                      <div class="project-link">View Repository <i data-lucide="external-link" size="16"></i></div>
+                  </a>
+                  <a href="https://github.com/Mahant-Akash/DCF-Model" class="project-card" target="_blank">
+                      <h3>Apple DCF Analysis</h3>
+                      <p>Comprehensive Discounted Cash Flow analysis using Bloomberg Terminal data to identify undervaluation.</p>
+                      <div class="project-link">View Repository <i data-lucide="external-link" size="16"></i></div>
+                  </a>
+                  <a href="https://github.com/Mahant_Akash/Reversal-Strategy" class="project-card" target="_blank">
+                      <h3>Reversal Trading Strategy</h3>
+                      <p>Back-tested a quarterly reversal strategy on the S&P 500, achieving 16.67% cumulative return.</p>
+                      <div class="project-link">View Repository <i data-lucide="external-link" size="16"></i></div>
+                  </a>
+              </div>
+          </section>
+
+          <section id="achievements">
+              <div class="section-header">
+                  <h2>Recognition & Education</h2>
+              </div>
+              <div class="skill-card" style="margin-bottom: 3rem;">
+                  <h3 style="color: var(--color-text-primary); margin-bottom: 1rem;">Education</h3>
+                  <p><strong>Master of Science, Finance</strong><br>Stevens Institute of             Technology | GPA: 3.86/4.00</p>
+              </div>
+              <div class="achievements-list">
+                  <div class="achievement-item">
+                      <span class="achievement-text">Accenture Star of Business Award</span>
+                      <span class="achievement-date">2020 & 2022</span>
+                  </div>
+                  <div class="achievement-item">
+                      <span class="achievement-text">Bloomberg Market Concepts</span>
+                      <span class="achievement-date">2022</span>
+                  </div>
+                  <div class="achievement-item">
+                      <span class="achievement-text">Fundamentals of Consulting</span>
+                      <span class="achievement-date">2022</span>
+                  </div>
+              </div>
+          </section>
+
+          <section id="contact">
+              <div class="contact-container">
+                  <div class="section-header">
+                      <h2>Get In Touch</h2>
+                  </div>
+                  <p>Open to opportunities in finance, accounting, and fintech.</p>
+                  <div class="contact-links">
+                      <a href="mailto:akash.r.mahant@gmail.com" class="contact-item">
+                          <i data-lucide="mail"></i>
+                          <span>Email</span>
+                      </a>
+                      <a href="https://www.linkedin.com/in/akashmahant" class="contact-item" target="_blank">
+                          <i data-lucide="linkedin"></i>
+                          <span>LinkedIn</span>
+                      </a>
+                      <a href="https://mahant-akash.github.io/akashmahant.github.io/" class="contact-item" target="_blank">
+                          <i data-lucide="globe"></i>
+                          <span>Website</span>
+                      </a>
+                  </div>
+              </div>
+          </section>
+      </div>
+
+      <footer>
+          <div class="container">
+              &copy; 2026 Akash Mahant. Built with precision.
+          </div>
+      </footer>
+
+      <script>
+          lucide.createIcons();
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('visible');
+                  }
+              });
+          }, { threshold: 0.1 });
+
+          document.querySelectorAll('section').forEach(s => observer.observe(s));
+      </script>
+  </body>
+  </html>

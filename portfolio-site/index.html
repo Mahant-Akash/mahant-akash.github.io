@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akash Mahant – Finance &amp; Tech Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #111;
+      --bg-darker: #0a0a0a;
+      --accent-gold: #FFD700;
+      --text-primary: #f0f0f0;
+      --text-muted: #aaa;
+      --glass-blur: 10px;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.6; }
+    a { color: var(--accent-gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position:fixed; top:0; left:0; right:0; height:100vh; background: linear-gradient(135deg, #111, #0a0a0a); display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; border-bottom:1px solid #333; }
+    .logo { font-family:'Cormorant Garamond',serif; font-size:2.2rem; color:var(--accent-gold); margin:0; text-shadow:0 0 10px var(--accent-gold); }
+    nav ul { list-style:none; padding:0; display:flex; gap:1.5rem; }
+    nav li { font-weight:500; }
+    section { padding:8rem 2rem 4rem; max-width:900px; margin:0 auto; }
+    .section-title { position:relative; font-size:2rem; margin-bottom:1.5rem; font-family:'Cormorant Garamond',serif; }
+    .section-title::after { content:""; position:absolute; left:0; bottom:0; height:3px; width:60px; background:var(--accent-gold); }
+    .grid { display:grid; gap:2rem; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); }
+    .card { background:rgba(255,255,255,0.05); backdrop-filter:blur(var(--glass-blur)); padding:1.5rem; border:1px solid rgba(255,255,255,0.1); border-radius:8px; }
+    .card h3 { font-family:'Cormorant Garamond',serif; margin-top:0; color:var(--accent-gold); }
+    .card p, .card li { color:var(--text-muted); }
+    .skills, .projects { grid-gap:2rem; }
+    .skills li, .projects li { list-style:none; }
+    .skills li::before { content:"•"; color:var(--accent-gold); margin-right:0.5rem; }
+    .contact a { display:inline-block; margin:0.5rem 0; }
+    .animate { opacity:0; transform:translateY(30px); transition:opacity .6s ease-out, transform .6s ease-out; }
+    .visible { opacity:1; transform:translateY(0); }
+    footer { text-align:center; padding:2rem 0; color:var(--text-muted); font-size:.9rem; border-top:1px solid #222; margin-top:4rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Akash Mahant</div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="about" class="animate"><h2 class="section-title">About Me</h2><p>Finance professional with a strong foundation in data-driven process automation, grant compliance, and financial analysis. Passionate about building robust financial systems and leveraging AI to transform regulatory research.</p></section>
+  <section id="experience" class="animate">
+    <h2 class="section-title">Experience</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Volunteers of America – Staff Accountant</h3>
+        <p class="card p"><strong>Jan 2025 – Present</strong></p>
+        <ul class="card p"><li>Automated grant billing workflow for $45K‑$100K quarterly claims.</li><li>Implemented Power Automate to route 200+ invoices monthly, cutting manual effort.</li></ul>
+      </div>
+      <div class="card">
+        <h3>Accenture – Senior Process Associate</h3>
+        <p class="card p"><strong>Aug 2019 – Jul 2022</strong></p>
+        <ul class="card p"><li>Macro‑driven automation boosted financial processing efficiency by 90%.</li><li>Trained 7+ new team members; refined SOPs for compliance.</li></ul>
+      </div>
+      <div class="card">
+        <h3>Money Honey Financial Services – Financial Advisor</h3>
+        <p class="card p"><strong>Jul 2018 – Nov 2018</strong></p>
+        <ul class="card p"><li>Managed 200+ client portfolios; achieved 100% retention.</li><li>Delivered 8% ROI on a $750K diversified portfolio.</li></ul>
+      </div>
+    </div>
+  </section>
+  <section id="skills" class="animate"><h2 class="section-title">Technical Skills</h2><div class="skills"><li>Accounts Payable</li><li>Financial Reporting (GAAP)</li><li>Grant Billing &amp; Compliance</li><li>ERP Tools (Business Central, Oracle Cloud)</li><li>Advanced Excel – Macros, Pivot Tables, VLOOKUP</li></div></section>
+  <section id="projects" class="animate"><h2 class="section-title">Selected Projects</h2><div class="projects"><div class="card"><h3>Local AI‑Powered SEC Filing RAG System</h3><p>Python RAG pipeline for natural‑language regulatory research, preserving data privacy with local processing.</p></div><div class="card"><h3>DCF Analysis for Apple</h3><p>Financial modeling using Bloomberg Terminal; identified a 7% undervaluation with 6% growth projection.</p></div><div class="card"><h3>Reversal Trading Strategy</h3><p>Quarterly S&P 500 stock selection; back‑tested return of 16.67% over 5 years.</p></div></div></section>
+  <section id="contact" class="animate"><h2 class="section-title">Contact</h2><div class="contact"><a href="mailto:akash.r.mahant@gmail.com">Email</a> • <a href="https://www.linkedin.com/in/akashmahant" target="_blank">LinkedIn</a></div></section>
+  <footer>© 2026 Akash Mahant – Crafted with bold minimalism.</footer>
+  <script>
+    const elems = document.querySelectorAll('.animate');
+    const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, {threshold:0.15});
+    elems.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
