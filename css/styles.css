@@ -170,9 +170,82 @@ a:hover {
 }
 
 /* Mobile Menu Toggle */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 1px;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+    transform-origin: center;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
     .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: min(320px, 75vw);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-xl);
+        background: var(--bg-primary);
+        border-left: 1px solid rgba(20, 184, 166, 0.1);
+        transform: translateX(100%);
+        transition: transform var(--transition-normal) var(--ease-out-quart);
+        z-index: 1000;
+    }
+
+    .nav-links.open {
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    .nav-overlay {
         display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .nav-overlay.visible {
+        display: block;
     }
 }
 
@@ -898,23 +971,36 @@ a:hover {
 /* =====================================================
    Responsive Design
    ===================================================== */
-@media (max-width: 1024px) {
+
+/* Tablet (768-1024px) — hybrid two-column layouts */
+@media (min-width: 768px) and (max-width: 1024px) {
     .about-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: var(--spacing-2xl);
     }
 
     .about-text {
-        padding-right: 0;
-        border-right: none;
+        padding-right: var(--spacing-xl);
+        border-right: 1px solid rgba(20, 184, 166, 0.2);
     }
 
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .hero-name {
+        font-size: 3.5rem;
     }
 }
 
-@media (max-width: 768px) {
+/* Mobile (<768px) — single column, drawer nav */
+@media (max-width: 767px) {
     .section {
         padding: var(--spacing-2xl) 0;
     }
@@ -958,15 +1044,87 @@ a:hover {
         width: 100%;
         justify-content: center;
     }
+
+    /* Disable GPU-heavy gradient mesh on mobile */
+    .gradient-mesh {
+        display: none;
+    }
+
+    .hero-bg {
+        background: radial-gradient(circle at 30% 40%, rgba(20, 184, 166, 0.1) 0%, transparent 60%),
+                    radial-gradient(circle at 70% 60%, rgba(245, 158, 11, 0.06) 0%, transparent 60%);
+    }
+}
+
+/* Mobile landscape — narrower hero text, less vertical padding */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero-name {
+        font-size: 1.875rem;
+    }
+
+    .hero-tagline {
+        font-size: 0.8125rem;
+    }
+
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-name {
-        font-size: 2rem;
+        font-size: clamp(2rem, 10vw, 2.5rem);
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
     }
 
     .container {
         padding: 0 var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .experience-card {
+        padding: var(--spacing-lg);
+    }
+
+    .project-card {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* =====================================================
+   Touch & Reduced Motion
+   ===================================================== */
+@media (hover: none) and (pointer: coarse) {
+    .nav-toggle {
+        width: 48px;
+        height: 48px;
+    }
+
+    .contact-link {
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .footer-link {
+        padding: var(--spacing-lg) var(--spacing-lg);
+    }
+
+    /* Disable hover-only effects that don't translate to touch */
+    .project-card:hover {
+        transform: none;
+    }
+
+    .highlight-card:hover {
+        transform: none;
+    }
+
+    .skill-item:hover .skill-fill {
+        box-shadow: none;
     }
 }
 
