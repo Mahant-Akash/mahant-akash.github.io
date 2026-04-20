@@ -160,13 +160,15 @@ function initSkillBarAnimations() {
             if (entry.isIntersecting) {
                 const fill = entry.target.querySelector('.skill-fill');
                 if (fill) {
-                    const width = fill.style.width;
-                    fill.style.width = '0';
+                    const targetScale = parseFloat(fill.dataset.scale) || 0;
+                    fill.dataset.scale = targetScale;
+                    fill.style.transform = 'scaleX(0)';
                     requestAnimationFrame(() => {
                         requestAnimationFrame(() => {
-                            fill.style.width = width;
+                            fill.style.transform = `scaleX(${targetScale})`;
                         });
                     });
+                    entry.target.classList.add('visible');
                 }
                 skillBarObserver.unobserve(entry.target);
             }
