@@ -57,8 +57,8 @@
     /* Shadows */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
-    --shadow-glow: 0 0 40px rgba(20, 184, 166, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.35);
+    --shadow-glow: 0 0 40px rgba(20, 184, 166, 0.08);
 }
 
 /* Reset & Base */
@@ -320,7 +320,7 @@ a:hover {
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.03em;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: var(--spacing-lg);
     opacity: 0;
     animation: fadeInUp 1s var(--ease-out-expo) 400ms forwards;
@@ -351,7 +351,7 @@ a:hover {
     gap: var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
     background: rgba(20, 184, 166, 0.1);
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     font-size: 0.875rem;
     color: var(--text-primary);
     border: 1px solid rgba(20, 184, 166, 0.2);
@@ -463,7 +463,7 @@ a:hover {
 .highlight-card {
     padding: var(--spacing-lg);
     background: var(--bg-tertiary);
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     text-align: center;
     border: 1px solid rgba(20, 184, 166, 0.1);
     transition: all var(--transition-normal);
@@ -541,7 +541,7 @@ a:hover {
 .experience-card {
     background: var(--bg-secondary);
     border: 1px solid rgba(20, 184, 166, 0.1);
-    border-radius: 16px;
+    border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
     transition: all var(--transition-normal);
 }
@@ -615,7 +615,7 @@ a:hover {
 .skills-category {
     background: var(--bg-secondary);
     border: 1px solid rgba(20, 184, 166, 0.1);
-    border-radius: 16px;
+    border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
 }
 
@@ -683,7 +683,7 @@ a:hover {
 .project-card {
     background: var(--bg-secondary);
     border: 1px solid rgba(20, 184, 166, 0.1);
-    border-radius: 16px;
+    border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
     transition: all var(--transition-normal);
     position: relative;
@@ -780,7 +780,7 @@ a:hover {
 .education-item {
     background: var(--bg-secondary);
     border: 1px solid rgba(20, 184, 166, 0.1);
-    border-radius: 16px;
+    border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
     display: flex;
     flex-direction: column;
@@ -828,7 +828,7 @@ a:hover {
 .certifications {
     background: var(--bg-secondary);
     border: 1px solid rgba(20, 184, 166, 0.1);
-    border-radius: 16px;
+    border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
 }
 
@@ -853,7 +853,7 @@ a:hover {
     text-align: center;
     padding: var(--spacing-lg);
     background: var(--bg-tertiary);
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     border: 1px solid rgba(20, 184, 166, 0.1);
     transition: all var(--transition-normal);
 }
@@ -1069,6 +1069,10 @@ a:hover {
     .section {
         padding: var(--spacing-xl) 0;
     }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1114,12 +1118,13 @@ a:hover {
         padding: var(--spacing-lg) var(--spacing-lg);
     }
 
-    /* Disable hover-only effects that don't translate to touch */
+    /* Disable hover-only effects on touch devices */
     .project-card:hover {
         transform: none;
     }
 
-    .highlight-card:hover {
+    .highlight-card:hover,
+    .cert-card:hover {
         transform: none;
     }
 
@@ -1128,23 +1133,36 @@ a:hover {
     }
 }
 
-/* =====================================================
-   Utility Classes
-   ===================================================== */
-.text-teal {
-    color: var(--accent-teal) !important;
+/* Custom cursor */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--accent-teal);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
 }
 
-.text-gold {
-    color: var(--accent-gold) !important;
+.custom-cursor.hover {
+    width: 40px;
+    height: 40px;
+    border-color: var(--accent-teal-light);
 }
 
-.bg-primary {
-    background-color: var(--bg-primary) !important;
+@media (prefers-reduced-motion: reduce) {
+    .custom-cursor {
+        display: none;
+    }
 }
 
-.bg-secondary {
-    background-color: var(--bg-secondary) !important;
+@media (pointer: coarse) {
+    .custom-cursor {
+        display: none;
+    }
 }
 
 /* Selection styling */
