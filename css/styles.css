@@ -57,8 +57,8 @@
     /* Shadows */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.35);
-    --shadow-glow: 0 0 40px rgba(20, 184, 166, 0.08);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 40px rgba(20, 184, 166, 0.1);
 }
 
 /* Reset & Base */
@@ -114,6 +114,11 @@ a:hover {
     transition: all var(--transition-normal);
 }
 
+.navbar-scrolled {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(11, 17, 32, 0.98);
+}
+
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -161,11 +166,13 @@ a:hover {
     transition: width var(--transition-normal);
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
     color: var(--accent-teal);
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
     width: 100%;
 }
 
@@ -320,7 +327,7 @@ a:hover {
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.03em;
-    color: var(--text-primary);
+    color: #fff;
     margin-bottom: var(--spacing-lg);
     opacity: 0;
     animation: fadeInUp 1s var(--ease-out-expo) 400ms forwards;
@@ -333,6 +340,16 @@ a:hover {
     margin-bottom: var(--spacing-2xl);
     opacity: 0;
     animation: fadeInUp 0.7s var(--ease-out-expo) 750ms forwards;
+}
+
+.hero-tagline-typing {
+    border-right: 2px solid var(--accent-teal);
+    animation: blink 0.7s step-end infinite;
+    white-space: pre-wrap;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
 }
 
 .hero-contact {
@@ -351,7 +368,7 @@ a:hover {
     gap: var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
     background: rgba(20, 184, 166, 0.1);
-    border-radius: var(--radius-md);
+    border-radius: 8px;
     font-size: 0.875rem;
     color: var(--text-primary);
     border: 1px solid rgba(20, 184, 166, 0.2);
@@ -445,6 +462,7 @@ a:hover {
 .about-text {
     padding-right: var(--spacing-xl);
     border-right: 1px solid rgba(20, 184, 166, 0.2);
+    max-width: 65ch;
 }
 
 .about-text p {
@@ -463,7 +481,7 @@ a:hover {
 .highlight-card {
     padding: var(--spacing-lg);
     background: var(--bg-tertiary);
-    border-radius: var(--radius-lg);
+    border-radius: 12px;
     text-align: center;
     border: 1px solid rgba(20, 184, 166, 0.1);
     transition: all var(--transition-normal);
@@ -541,7 +559,7 @@ a:hover {
 .experience-card {
     background: var(--bg-secondary);
     border: 1px solid rgba(20, 184, 166, 0.1);
-    border-radius: var(--radius-xl);
+    border-radius: 16px;
     padding: var(--spacing-xl);
     transition: all var(--transition-normal);
 }
@@ -615,7 +633,7 @@ a:hover {
 .skills-category {
     background: var(--bg-secondary);
     border: 1px solid rgba(20, 184, 166, 0.1);
-    border-radius: var(--radius-xl);
+    border-radius: 16px;
     padding: var(--spacing-xl);
 }
 
@@ -641,10 +659,23 @@ a:hover {
     gap: var(--spacing-sm);
 }
 
+.skill-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
 .skill-name {
     font-size: 0.875rem;
     color: var(--text-secondary);
     font-family: var(--font-body);
+}
+
+.skill-percentage {
+    font-size: 0.75rem;
+    color: var(--accent-teal);
+    font-family: var(--font-body);
+    font-weight: 600;
 }
 
 .skill-bar {
@@ -683,7 +714,7 @@ a:hover {
 .project-card {
     background: var(--bg-secondary);
     border: 1px solid rgba(20, 184, 166, 0.1);
-    border-radius: var(--radius-xl);
+    border-radius: 16px;
     padding: var(--spacing-xl);
     transition: all var(--transition-normal);
     position: relative;
@@ -715,6 +746,7 @@ a:hover {
 .project-icon {
     font-size: 2.5rem;
     margin-bottom: var(--spacing-lg);
+    color: var(--accent-teal);
 }
 
 .project-title {
@@ -780,7 +812,7 @@ a:hover {
 .education-item {
     background: var(--bg-secondary);
     border: 1px solid rgba(20, 184, 166, 0.1);
-    border-radius: var(--radius-xl);
+    border-radius: 16px;
     padding: var(--spacing-xl);
     display: flex;
     flex-direction: column;
@@ -795,6 +827,7 @@ a:hover {
 
 .education-icon {
     font-size: 2rem;
+    color: var(--accent-teal);
 }
 
 .institution {
@@ -828,7 +861,7 @@ a:hover {
 .certifications {
     background: var(--bg-secondary);
     border: 1px solid rgba(20, 184, 166, 0.1);
-    border-radius: var(--radius-xl);
+    border-radius: 16px;
     padding: var(--spacing-xl);
 }
 
@@ -853,7 +886,7 @@ a:hover {
     text-align: center;
     padding: var(--spacing-lg);
     background: var(--bg-tertiary);
-    border-radius: var(--radius-lg);
+    border-radius: 12px;
     border: 1px solid rgba(20, 184, 166, 0.1);
     transition: all var(--transition-normal);
 }
@@ -867,6 +900,7 @@ a:hover {
 .cert-icon {
     font-size: 2rem;
     margin-bottom: var(--spacing-sm);
+    color: var(--accent-teal);
 }
 
 .cert-name {
@@ -1019,6 +1053,11 @@ a:hover {
         font-size: 2.5rem;
     }
 
+    .hero-tagline {
+        animation: none;
+        opacity: 1;
+    }
+
     .hero-contact {
         flex-direction: column;
         align-items: center;
@@ -1069,10 +1108,6 @@ a:hover {
     .section {
         padding: var(--spacing-xl) 0;
     }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1118,13 +1153,12 @@ a:hover {
         padding: var(--spacing-lg) var(--spacing-lg);
     }
 
-    /* Disable hover-only effects on touch devices */
+    /* Disable hover-only effects that don't translate to touch */
     .project-card:hover {
         transform: none;
     }
 
-    .highlight-card:hover,
-    .cert-card:hover {
+    .highlight-card:hover {
         transform: none;
     }
 
@@ -1133,36 +1167,23 @@ a:hover {
     }
 }
 
-/* Custom cursor */
-.custom-cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border: 1px solid var(--accent-teal);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: difference;
+/* =====================================================
+   Utility Classes
+   ===================================================== */
+.text-teal {
+    color: var(--accent-teal) !important;
 }
 
-.custom-cursor.hover {
-    width: 40px;
-    height: 40px;
-    border-color: var(--accent-teal-light);
+.text-gold {
+    color: var(--accent-gold) !important;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .custom-cursor {
-        display: none;
-    }
+.bg-primary {
+    background-color: var(--bg-primary) !important;
 }
 
-@media (pointer: coarse) {
-    .custom-cursor {
-        display: none;
-    }
+.bg-secondary {
+    background-color: var(--bg-secondary) !important;
 }
 
 /* Selection styling */

@@ -51,7 +51,7 @@ function initSmoothScrolling() {
 }
 
 /**
- * Navbar scroll effect - single RAF-throttled scroll handler
+ * Navbar scroll effect - single RAF-throttled handler
  */
 function initNavbarScrollEffect() {
     const navbar = document.querySelector('.navbar');
@@ -60,11 +60,9 @@ function initNavbarScrollEffect() {
     const updateNavbar = () => {
         const currentScrollY = window.scrollY;
         if (currentScrollY > 100) {
-            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
-            navbar.style.background = 'rgba(11, 17, 32, 0.98)';
+            navbar.classList.add('navbar-scrolled');
         } else {
-            navbar.style.boxShadow = 'none';
-            navbar.style.background = 'rgba(11, 17, 32, 0.95)';
+            navbar.classList.remove('navbar-scrolled');
         }
         ticking = false;
     };
@@ -94,10 +92,12 @@ function initActiveNavHighlighting() {
             const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
 
             if (navLink) {
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
                     navLink.style.color = 'var(--accent-teal)';
+                    navLink.setAttribute('aria-current', 'page');
                 } else {
                     navLink.style.color = '';
+                    navLink.removeAttribute('aria-current');
                 }
             }
         });
@@ -134,8 +134,13 @@ function initHeroAnimations() {
         setTimeout(typeChar, 800);
     }
 
-    // Parallax effect - RAF-throttled
+    // Parallax effect - RAF-throttled, respects prefers-reduced-motion
     const heroMesh = document.querySelector('.gradient-mesh');
+    if (!heroMesh) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (prefersReducedMotion.matches) return;
+
     let ticking = false;
 
     window.addEventListener('scroll', () => {
@@ -331,7 +336,10 @@ function initMobileMenu() {
 function initKeyboardNavigation() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const menu = document.querySelector('.nav-links');
+            if (!menu?.classList.contains('open')) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
     });
 }

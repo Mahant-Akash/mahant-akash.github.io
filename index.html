@@ -12,9 +12,9 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">AM</a>
+            <a href="#hero" class="nav-logo" aria-label="Akash Mahant - Home">AM</a>
             <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -22,7 +22,7 @@
             </button>
             <div class="nav-overlay"></div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
+                <li><a href="#about" aria-current="page">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -32,7 +32,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero">
+    <section id="hero" class="hero" aria-label="Hero section">
         <div class="hero-bg">
             <div class="gradient-mesh"></div>
             <div class="grid-overlay"></div>
@@ -42,16 +42,16 @@
             <h1 class="hero-name fade-in">Akash Mahant</h1>
             <p class="hero-tagline fade-in">CFA Level I Candidate | MS Finance, Stevens Institute of Technology</p>
             <div class="hero-contact fade-in">
-                <a href="tel:+15513445273" class="contact-link">
-                    <span class="contact-icon">📞</span>
+                <a href="tel:+15513445273" class="contact-link" aria-label="Phone: +1 (551) 344-5273">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     <span>+1 (551) 344-5273</span>
                 </a>
-                <a href="mailto:akash.r.mahant@gmail.com" class="contact-link">
-                    <span class="contact-icon">✉️</span>
+                <a href="mailto:akash.r.mahant@gmail.com" class="contact-link" aria-label="Email: akash.r.mahant@gmail.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                     <span>akash.r.mahant@gmail.com</span>
                 </a>
-                <a href="https://www.linkedin.com/in/akashmahant" target="_blank" class="contact-link">
-                    <span class="contact-icon">💼</span>
+                <a href="https://www.linkedin.com/in/akashmahant" target="_blank" class="contact-link" aria-label="LinkedIn profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                     <span>LinkedIn</span>
                 </a>
             </div>
@@ -68,30 +68,30 @@
     <section id="about" class="section about">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">01</span>
+                <span class="section-badge" aria-hidden="true">01</span>
                 <h2 class="section-title">About</h2>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Detail-oriented finance & accounting professional with an MS in Finance and hands-on experience in accounts payable, grant billing, and financial reporting. Seeking to leverage expertise in a collaborative environment.</p>
+                    <p>Detail-oriented finance &amp; accounting professional with an MS in Finance and hands-on experience in accounts payable, grant billing, and financial reporting. Seeking to leverage expertise in a collaborative environment.</p>
                     <p>As a CFA Level I candidate, I combine strong analytical skills with practical experience in financial operations. My expertise spans grant billing operations, financial reporting, and process automation — consistently delivering accuracy and efficiency in collaborative environments.</p>
                 </div>
                 <div class="about-highlights">
                     <div class="highlight-card">
                         <span class="highlight-number" data-target="200" data-prefix="$" data-suffix="K+">0</span>
-                        <span class="highlight-label">Quarterly Billing</span>
+                        <span class="highlight-label">Quarterly Grant Claims</span>
                     </div>
                     <div class="highlight-card">
                         <span class="highlight-number" data-target="99" data-prefix="" data-suffix="%+">0</span>
                         <span class="highlight-label">Accuracy Rate</span>
                     </div>
                     <div class="highlight-card">
-                        <span class="highlight-number" data-target="90" data-prefix="" data-suffix="%">0</span>
-                        <span class="highlight-label">Efficiency Improvement</span>
+                        <span class="highlight-number" data-target="85" data-prefix="" data-suffix="%">0</span>
+                        <span class="highlight-label">Process Time Reduction</span>
                     </div>
                     <div class="highlight-card">
-                        <span class="highlight-number" data-target="200" data-prefix="" data-suffix="+">0</span>
-                        <span class="highlight-label">Invoices Monthly</span>
+                        <span class="highlight-number" data-target="30" data-prefix="" data-suffix="%">0</span>
+                        <span class="highlight-label">Outstanding Issues Reduced</span>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
     <section id="experience" class="section experience">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">02</span>
+                <span class="section-badge" aria-hidden="true">02</span>
                 <h2 class="section-title">Experience</h2>
             </div>
             <div class="timeline">
@@ -113,8 +113,8 @@
                         <h3 class="company">Volunteers of America-Greater New York</h3>
                         <p class="role">Staff Accountant | January 2025 – Present</p>
                         <ul class="achievement-list">
-                            <li><strong>Grant Billing:</strong> Preparing and submitting claims totaling <span class="highlight">$45K-$100K quarterly</span> with 100% compliance</li>
-                            <li><strong>Process Automation:</strong> Developed Power Automate workflow routing <span class="highlight">200+ invoices monthly</span>, eliminating manual file handling</li>
+                            <li><strong>Grant Billing:</strong> Preparing and submitting claims totaling <span class="highlight">$200K quarterly</span> with 100% compliance</li>
+                            <li><strong>Process Automation:</strong> Developed Power Automate workflow to reduce manual processing time by <span class="highlight">85%</span>, eliminating manual file handling</li>
                             <li><strong>Financial Reconciliation:</strong> Daily invoice and PO management in Microsoft Business Central with <span class="highlight">99%+ accuracy</span></li>
                             <li><strong>Vendor Management:</strong> Reduced outstanding issues by <span class="highlight">30%</span> through proactive resolution</li>
                         </ul>
@@ -153,7 +153,7 @@
     <section id="skills" class="section skills">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">03</span>
+                <span class="section-badge" aria-hidden="true">03</span>
                 <h2 class="section-title">Skills</h2>
             </div>
             <div class="skills-grid">
@@ -161,36 +161,76 @@
                     <h3 class="category-title">Technical Skills</h3>
                     <div class="skills-list">
                         <div class="skill-item">
-                            <span class="skill-name">Accounts Payable</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.95"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Accounts Payable</span>
+                                <span class="skill-percentage" aria-hidden="true">95%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Accounts Payable proficiency 95%">
+                                <div class="skill-fill" data-scale="0.95"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Financial Reporting & Analysis</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.90"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Financial Reporting &amp; Analysis</span>
+                                <span class="skill-percentage" aria-hidden="true">90%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Financial Reporting & Analysis proficiency 90%">
+                                <div class="skill-fill" data-scale="0.90"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Purchase Order Management</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.85"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Purchase Order Management</span>
+                                <span class="skill-percentage" aria-hidden="true">85%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Purchase Order Management proficiency 85%">
+                                <div class="skill-fill" data-scale="0.85"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Grant Billing & Compliance</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.95"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Grant Billing &amp; Compliance</span>
+                                <span class="skill-percentage" aria-hidden="true">95%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Grant Billing & Compliance proficiency 95%">
+                                <div class="skill-fill" data-scale="0.95"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Microsoft Business Central</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.90"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Microsoft Business Central</span>
+                                <span class="skill-percentage" aria-hidden="true">90%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Microsoft Business Central proficiency 90%">
+                                <div class="skill-fill" data-scale="0.90"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Oracle Cloud</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.80"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Oracle Cloud</span>
+                                <span class="skill-percentage" aria-hidden="true">80%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Oracle Cloud proficiency 80%">
+                                <div class="skill-fill" data-scale="0.80"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Advanced Excel (Macros, Pivot, VLOOKUP)</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.95"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Advanced Excel (Macros, Pivot, VLOOKUP)</span>
+                                <span class="skill-percentage" aria-hidden="true">95%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Advanced Excel proficiency 95%">
+                                <div class="skill-fill" data-scale="0.95"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Power Automate</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.85"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Power Automate</span>
+                                <span class="skill-percentage" aria-hidden="true">85%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Power Automate proficiency 85%">
+                                <div class="skill-fill" data-scale="0.85"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -198,36 +238,76 @@
                     <h3 class="category-title">Professional Skills</h3>
                     <div class="skills-list">
                         <div class="skill-item">
-                            <span class="skill-name">GAAP Knowledge</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.90"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">GAAP Knowledge</span>
+                                <span class="skill-percentage" aria-hidden="true">90%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="GAAP Knowledge proficiency 90%">
+                                <div class="skill-fill" data-scale="0.90"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Regulatory Compliance</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.95"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Regulatory Compliance</span>
+                                <span class="skill-percentage" aria-hidden="true">95%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Regulatory Compliance proficiency 95%">
+                                <div class="skill-fill" data-scale="0.95"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Audit Support</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.85"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Audit Support</span>
+                                <span class="skill-percentage" aria-hidden="true">85%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Audit Support proficiency 85%">
+                                <div class="skill-fill" data-scale="0.85"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Vendor Management</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.90"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Vendor Management</span>
+                                <span class="skill-percentage" aria-hidden="true">90%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Vendor Management proficiency 90%">
+                                <div class="skill-fill" data-scale="0.90"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Account Reconciliation</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.95"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Account Reconciliation</span>
+                                <span class="skill-percentage" aria-hidden="true">95%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Account Reconciliation proficiency 95%">
+                                <div class="skill-fill" data-scale="0.95"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Budget Analysis</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.85"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Budget Analysis</span>
+                                <span class="skill-percentage" aria-hidden="true">85%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Budget Analysis proficiency 85%">
+                                <div class="skill-fill" data-scale="0.85"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Process Improvement & Automation</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.95"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Process Improvement &amp; Automation</span>
+                                <span class="skill-percentage" aria-hidden="true">95%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Process Improvement & Automation proficiency 95%">
+                                <div class="skill-fill" data-scale="0.95"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Internal Controls</span>
-                            <div class="skill-bar"><div class="skill-fill" data-scale="0.90"></div></div>
+                            <div class="skill-info-row">
+                                <span class="skill-name">Internal Controls</span>
+                                <span class="skill-percentage" aria-hidden="true">90%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Internal Controls proficiency 90%">
+                                <div class="skill-fill" data-scale="0.90"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -239,17 +319,19 @@
     <section id="projects" class="section projects">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">04</span>
+                <span class="section-badge" aria-hidden="true">04</span>
                 <h2 class="section-title">Projects</h2>
             </div>
             <div class="projects-grid">
                 <div class="project-card fade-in">
-                    <div class="project-icon">🤖</div>
+                    <div class="project-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="8" height="4" x="14" y="4" rx="1"/><path d="M12 12v7"/><path d="M21 20H3"/></svg>
+                    </div>
                     <div class="project-content">
                         <h3 class="project-title">Local AI-Powered SEC Filing Research System</h3>
                         <p class="project-tag">Personal Project | Python, RAG, Local AI</p>
                         <p class="project-description">Developed a Python RAG pipeline to automate regulatory filing analysis across multi-year SEC documents, enabling natural language queries with cited responses while ensuring full data privacy and compliance through local processing.</p>
-                        <a href="https://github.com/Mahant-Akash/SEC-Filing-RAG-Local-AI-for-Financial-Research" target="_blank" class="project-link">
+                        <a href="https://github.com/Mahant-Akash/SEC-Filing-RAG-Local-AI-for-Financial-Research" target="_blank" class="project-link" aria-label="View SEC Filing RAG project on GitHub (opens in new window)">
                             View on GitHub
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -258,12 +340,14 @@
                     </div>
                 </div>
                 <div class="project-card fade-in">
-                    <div class="project-icon">📊</div>
+                    <div class="project-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-6 6"/></svg>
+                    </div>
                     <div class="project-content">
                         <h3 class="project-title">DCF Analysis for Apple Stock</h3>
                         <p class="project-tag">Stevens Institute of Technology | Financial Modeling</p>
                         <p class="project-description">Conducted comprehensive DCF analysis on Apple stock using Bloomberg Terminal, forecasting 6% annual revenue growth and identifying 7% upside potential through detailed valuation analysis.</p>
-                        <a href="https://github.com/Mahant-Akash/DCF-Model" target="_blank" class="project-link">
+                        <a href="https://github.com/Mahant-Akash/DCF-Model" target="_blank" class="project-link" aria-label="View DCF Model project on GitHub (opens in new window)">
                             View on GitHub
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -272,12 +356,14 @@
                     </div>
                 </div>
                 <div class="project-card fade-in">
-                    <div class="project-icon">📈</div>
+                    <div class="project-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m2 12 5 5L12 8l5 9 5-5"/></svg>
+                    </div>
                     <div class="project-content">
                         <h3 class="project-title">Reversal Trading Strategy</h3>
                         <p class="project-tag">Stevens Institute of Technology | Quantitative Strategy</p>
-                        <p class="project-description">Developed and back-tested a quarterly reversal strategy selecting 50 stocks from S&P 500 over 5 years, achieving 16.67% cumulative return through data-driven selection criteria.</p>
-                        <a href="https://github.com/Mahant-Akash/Reversal-Strategy" target="_blank" class="project-link">
+                        <p class="project-description">Developed and back-tested a quarterly reversal strategy selecting 50 stocks from S&amp;P 500 over 5 years, achieving 16.67% cumulative return through data-driven selection criteria.</p>
+                        <a href="https://github.com/Mahant-Akash/Reversal-Strategy" target="_blank" class="project-link" aria-label="View Reversal Strategy project on GitHub (opens in new window)">
                             View on GitHub
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -293,12 +379,14 @@
     <section id="education" class="section education">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">05</span>
-                <h2 class="section-title">Education & Certifications</h2>
+                <span class="section-badge" aria-hidden="true">05</span>
+                <h2 class="section-title">Education &amp; Certifications</h2>
             </div>
             <div class="education-grid">
                 <div class="education-item">
-                    <div class="education-icon">🎓</div>
+                    <div class="education-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 18.57c-.81.44-2.18.65-3.76.92-1.6.27-3.49.41-5.42.41-1.93 0-3.82-.14-5.42-.41-1.58-.27-2.95-.48-3.76-.92A.62.62 0 0 1 2 18c0-1.09.49-2.08 1.17-3.35.68-1.26 1.6-2.74 2.89-4.23.64-.79 1.36-1.5 2.08-2.18L12 7l4.66 3.24c.72.68 1.44 1.39 2.08 2.18 1.29 1.49 2.21 2.97 2.89 4.23.68 1.27 1.17 2.26 1.17 3.35a.62.62 0 0 1-.38.57z"/><path d="m15.89 9.49.24 7.52"/><path d="m8.31 9.49 3.2 7.52"/></svg>
+                    </div>
                     <h3 class="institution">Stevens Institute of Technology</h3>
                     <p class="degree">Master of Science, Finance</p>
                     <p class="gpa">GPA: 3.86/4.00 | September 2022 – May 2024</p>
@@ -306,30 +394,40 @@
                 </div>
             </div>
             <div class="certifications">
-                <h3 class="certifications-title">Certifications & Awards</h3>
+                <h3 class="certifications-title">Certifications &amp; Awards</h3>
                 <div class="cert-grid">
                     <div class="cert-card fade-in">
-                        <span class="cert-icon">🏆</span>
+                        <span class="cert-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </span>
                         <span class="cert-name">Star of Business Award</span>
-                        <span class="cert-desc">Accenture (Dec 2020 & Mar 2022)</span>
+                        <span class="cert-desc">Accenture (Dec 2020 &amp; Mar 2022)</span>
                     </div>
                     <div class="cert-card fade-in">
-                        <span class="cert-icon">🏆</span>
+                        <span class="cert-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </span>
                         <span class="cert-name">Excellence Award</span>
-                        <span class="cert-desc">Money Honey Financial Services</span>
+                        <span class="cert-desc">Money Honey Financial Services (Oct 2018)</span>
                     </div>
                     <div class="cert-card fade-in">
-                        <span class="cert-icon">📈</span>
+                        <span class="cert-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                        </span>
                         <span class="cert-name">Bloomberg Market Concepts</span>
                         <span class="cert-desc">December 2022</span>
                     </div>
                     <div class="cert-card fade-in">
-                        <span class="cert-icon">💼</span>
+                        <span class="cert-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M9 16a3 3 0 0 0 6 0"/></svg>
+                        </span>
                         <span class="cert-name">Fundamentals of Consulting</span>
                         <span class="cert-desc">Harvard Business Publishing | Dec 2022</span>
                     </div>
                     <div class="cert-card fade-in">
-                        <span class="cert-icon">📚</span>
+                        <span class="cert-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
                         <span class="cert-name">CFA Level I Candidate</span>
                         <span class="cert-desc">In Progress</span>
                     </div>
@@ -342,23 +440,6 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-contact">
-                    <h3 class="footer-title">Get in Touch</h3>
-                    <div class="footer-links">
-                        <a href="tel:+15513445273" class="footer-link">
-                            <span>📞</span>
-                            <span>+1 (551) 344-5273</span>
-                        </a>
-                        <a href="mailto:akash.r.mahant@gmail.com" class="footer-link">
-                            <span>✉️</span>
-                            <span>akash.r.mahant@gmail.com</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/akashmahant" target="_blank" class="footer-link">
-                            <span>💼</span>
-                            <span>LinkedIn</span>
-                        </a>
-                    </div>
-                </div>
                 <div class="footer-bottom">
                     <p>&copy; 2026 Akash Mahant. All rights reserved.</p>
                 </div>
