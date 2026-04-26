@@ -11,17 +11,20 @@
     --bg-tertiary: #1A273F;
 
     /* Text colors */
-    --text-primary: #E2E8F0;
-    --text-secondary: #94A3B8;
-    --text-muted: #64748B;
-    --text-accent: #14B8A6;
+    --text-primary: #E5E9F0;
+    --text-secondary: #9AA3B8;
+    --text-muted: #6B7D8B;
+    --text-accent: #5EEAD4;
 
     /* Accent colors */
     --accent-teal: #14B8A6;
     --accent-teal-dark: #0D9488;
-    --accent-teal-light: #2DD4BF;
+    --accent-teal-light: #5EEAD4;
     --accent-gold: #F59E0B;
     --accent-gold-light: #FBBF24;
+
+    /* Accent RGB for alpha mixins */
+    --accent-teal-rgb: 20, 184, 166;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-teal-dark) 100%);
